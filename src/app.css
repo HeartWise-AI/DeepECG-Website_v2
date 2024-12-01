@@ -1,0 +1,47 @@
+@import '@fontsource/inter';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --primary: #548FDF;      /* Bright Blue - Main color */
+  --secondary: #82C0F2;    /* Light Blue - Secondary color */
+  
+  /* Accent Colors */
+  --accent: #8EE4AA;       /* Light Green - Health status */
+  
+  /* Neutral Colors */
+  --white: #FFFFFF;        /* Primary White */
+  --black: #181E27;        /* Primary Black */
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	font-family: 'Inter', sans-serif;
+	color: var(--black);
+	background-color: var(--white);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 45%, var(--secondary) 45%, var(--secondary) 55%, transparent 55%);
+    background-size: 20px 20px;
+    opacity: 0.1;
+  }
+}
